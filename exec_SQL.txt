@@ -1,1 +1,0 @@
-177 Query    SELECT *,sys_exec("ls") FROM users WHERE user_id =name='Herp Derper'
